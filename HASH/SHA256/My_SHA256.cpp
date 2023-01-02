@@ -124,10 +124,8 @@ SHA256_Data::_SHA256_Data(PUCHAR M) {
 }
 
 BOOLEAN SHA256_HASH(PSHA256_Data Data) {
-    ULONG32 R[8] = { 0 };
-    ULONG32 A = R[0], B = R[1], C = R[2], D = R[3], E = R[4], F = R[5], G = R[6], H = R[7];
+    ULONG32 A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0, H = 0;
     ULONG32 T1 = 0, T2 = 0;//零时变量
-    ULONG32 Ac = 0, Bc = 0, Cc = 0, Dc = 0, Ec = 0, Fc = 0, Gc = 0, Hc = 0;//端序转换
     int B_i = Data->Mc_Len_Bit / 512;
     ULONG32(*nH)[8] = (ULONG32(*)[8])malloc((B_i + 1) * 8 * 4);
     memcpy(&nH[0][0], h0, 32);
