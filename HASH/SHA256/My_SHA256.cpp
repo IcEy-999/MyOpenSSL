@@ -131,12 +131,7 @@ BOOLEAN SHA256_HASH(PSHA256_Data Data) {
     int B_i = Data->Mc_Len_Bit / 512;
     ULONG32(*nH)[8] = (ULONG32(*)[8])malloc((B_i + 1) * 8 * 4);
     memcpy(&nH[0][0], h0, 32);
-    UCHAR T_buffer[32] = { 0 };
     for (int i = 0; i < B_i; i++) {
-        memcpy(T_buffer, &nH[i][0], 32);
-        /*for (int k = 0; k < 8; k++)
-            R[k] = ((ULONG32)T_buffer[k * 4]) << 24 | ((ULONG32)T_buffer[k * 4 + 1]) << 16 | ((ULONG32)T_buffer[k * 4 + 2]) << 8 | ((ULONG32)T_buffer[k * 4 + 3]);
-        A = R[0]; B = R[1]; C = R[2]; D = R[3]; E = R[4]; F = R[5]; G = R[6]; H = R[7];*/
         A = nH[i][0];B = nH[i][1];C= nH[i][2];D= nH[i][3];E= nH[i][4];F= nH[i][5];G= nH[i][6];H= nH[i][7];
         for (int j = 0; j < 64; j++) {
             T1 = H + Ep1(E) + Ch(E, F, G) + K[j] + Data->nW[i][j];
