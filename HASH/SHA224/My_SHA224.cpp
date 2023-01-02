@@ -174,7 +174,7 @@ BOOLEAN Mc_To_W(PSHA224_Data Data) {
             nW[i][j] = (ULONG32)(Data->Mc[i * 512 / 8 + j * 4] << 24 | Data->Mc[i * 512 / 8 + j * 4 + 1] << 16 | Data->Mc[i * 512 / 8 + j * 4 + 2] << 8 | Data->Mc[i * 512 / 8 + j * 4 + 3]);
         }
 
-        for (int j = 16; j < 64; j++) {//初始化 Bi(W16 - W67)
+        for (int j = 16; j < 64; j++) {//初始化 Bi(W16 - W63)
             nW[i][j] = SIG1(nW[i][j - 2]) + nW[i][j - 7] + SIG0(nW[i][j - 15]) + nW[i][j - 16];
         }
     }
