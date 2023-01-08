@@ -19,5 +19,10 @@ Encryption and decryption:
 通过OpenSSL实现各种密码的例子。
 
 
+编码：
+
+Base64、
+
+
 
 项目正在不断完善中.......
