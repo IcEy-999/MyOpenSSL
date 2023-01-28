@@ -16,7 +16,7 @@ MD5、SHA1、SHA224、SHA256、SHA384、SHA512、SHA3-224、SHA3-256、SHA3-384�
 Encryption and decryption:
 
 
-通过OpenSSL实现各种密码的例子。
+通过OpenSSL实现各种密码的例子、RSA
 
 
 编码：
